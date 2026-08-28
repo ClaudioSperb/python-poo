@@ -1,33 +1,38 @@
 #Declaração de Classe
 class Gafanhoto:
-    def __init__(self): #Método Construtor
+    """
+    Cria um objeto Gafanhoto que tem como atributos, nome e idade.
+    variavel = Gafanhoto(nome, idade)
+    """
+
+    def __init__(self, nome='vazio', idade=0): #Método Construtor
         #Atributos de Instância
-        self.nome = ''
-        self.idade = 0
+        self.nome = nome
+        self.idade = idade
 
     #Métodos de Instância
     def aniversario(self):
         self.idade = self.idade + 1
 
-    def mensagem(self):
-        return f'{self.nome} é Gafanhoto(a) e tem {self.idade} anos de idade.'
+
+    def __str__(self): #DUNDER METHOD
+        if self.nome == 'vazio' and self.idade == 0:
+            return 'Nenhum dado informado'
+        else:
+            return f'{self.nome} é Gafanhoto(a) e tem {self.idade} anos de idade.'
+
+    def __getstate__(self):
+        if self.nome == 'vazio' and self.idade == 0:
+            return 'Variável sem nenhum dado'
+        else:
+            return f'Estado: nome = {self.nome}; idade = {self.idade}'
 
 #Declaração de Objetos
-g1 = Gafanhoto() #Objeto criado usando a classe Gafanhoto()
-g1.nome = 'Claudio'
-g1.idade = 36
+g1 = Gafanhoto("Claudio", 36) #Objeto criado usando a classe Gafanhoto()
 g1.aniversario()
-g1.aniversario()
-print(g1.mensagem())
+print(g1)
 
-g2 = Gafanhoto()
-g2.nome = 'Cristen'
-g2.idade = 24
-g2.aniversario()
-print(g2.mensagem())
-
-g3 = Gafanhoto()
-g3.nome = 'Josiane'
-g3.idade = 25
-g3.aniversario()
-print(g3.mensagem())
+print(g1.__doc__) #Docstring / DUNDER ATTRIBUTE
+print(g1.__dict__) # Atributo
+print(g1.__getstate__()) #Método
+print(g1.__class__)
