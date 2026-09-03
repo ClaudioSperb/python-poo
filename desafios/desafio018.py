@@ -1,5 +1,3 @@
-from collections.abc import dict_values
-
 from rich.panel import Panel
 from rich import print
 
