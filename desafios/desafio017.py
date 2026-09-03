@@ -1,8 +1,6 @@
 from rich.panel import Panel
 from rich import print
 
-
-
 #CRIANDO ETIQUETAS
 
 class Produto:
@@ -10,7 +8,7 @@ class Produto:
     """
     Classe que adiciona um produto e um valor
     """
-    
+
     def __init__(self, nome, preco):
         self.nome = nome
         self.preco = preco
