@@ -14,6 +14,9 @@ class Churrasco:
         self.titulo = titulo
         self.tot = tot
 
+    def __str__(self):
+        return f'Esse é o {self.titulo} com {self.tot} pessoas participantes.'
+
     def analisar(self):
         #Variaveis para os calculos
         recomendacao = 0.4 * self.tot
@@ -30,3 +33,6 @@ class Churrasco:
 
 c1 = Churrasco('Churras dos Amigos', 500)
 c1.analisar()
+
+c2 = Churrasco('Festa da REK', 20)
+c2.analisar()
