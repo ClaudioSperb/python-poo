@@ -23,7 +23,7 @@ class Caneta:
 
     def destampar(self):
         self.destampado = False
-        print(f'⚠️ [on red]A caneta {self.cor} esta tampada[/]')
+        print(f'⚠️ [on red]  A caneta {self.cor} esta tampada  [/]')
 
 p1 = Caneta('Vermelho')
 p1.destampar()
