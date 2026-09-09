@@ -15,6 +15,30 @@ class ControleRemoto:
     def liga_desliga(self):
         self.ligado = not self.ligado
 
+    def canal_mais(self):
+        if self.ligado:
+            if self.canal_atual == ControleRemoto.canal_min:
+                self.canal_atual = ControleRemoto.canal_min
+            else:
+                self.canal_atual += 1
+
+    def canal_menos(self):
+        if self.ligado:
+            if self.canal_atual == ControleRemoto.canal_min:
+                self.canal_atual = ControleRemoto.canal_max
+            else:
+                self.canal_atual -= 1
+
+    def volume_mais(self):
+        if self.ligado:
+            if self.volume_atual != ControleRemoto.volume_max:
+                self.volume_atual += 1
+
+    def volume_menos(self):
+        if self.ligado:
+           if self.volume_atual != ControleRemoto.volume_min:
+                self.volume_atual -= 1
+
     def mostrar_tv(self):
         conteudo = ''
         if not self.ligado:
@@ -38,6 +62,13 @@ class ControleRemoto:
         print(tv)
 
 
-c = ControleRemoto(6, 6)
+c = ControleRemoto(5, 2)
 c.liga_desliga()
+c.canal_menos()
+c.canal_menos()
+c.canal_menos()
+c.canal_menos()
+c.canal_menos()
+c.volume_menos()
+c.volume_menos()
 c.mostrar_tv()
