@@ -17,7 +17,7 @@ class ControleRemoto:
 
     def canal_mais(self):
         if self.ligado:
-            if self.canal_atual == ControleRemoto.canal_min:
+            if self.canal_atual == ControleRemoto.canal_max:
                 self.canal_atual = ControleRemoto.canal_min
             else:
                 self.canal_atual += 1
@@ -64,11 +64,11 @@ class ControleRemoto:
 
 c = ControleRemoto(5, 2)
 c.liga_desliga()
+c.volume_mais()
+c.volume_mais()
+c.volume_mais()
+c.canal_mais()
+c.canal_mais()
+
 c.canal_menos()
-c.canal_menos()
-c.canal_menos()
-c.canal_menos()
-c.canal_menos()
-c.volume_menos()
-c.volume_menos()
 c.mostrar_tv()
