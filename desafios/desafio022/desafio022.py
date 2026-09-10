@@ -62,13 +62,20 @@ class ControleRemoto:
         print(tv)
 
 
-c = ControleRemoto(5, 2)
-c.liga_desliga()
-c.volume_mais()
-c.volume_mais()
-c.volume_mais()
-c.canal_mais()
-c.canal_mais()
-
-c.canal_menos()
-c.mostrar_tv()
+c = ControleRemoto()
+while True:
+    c.mostrar_tv()
+    comando = str(input(f'< CH{c.canal_atual} >   - VOL{c.volume_atual} + '))
+    match comando:
+        case '0':
+            break
+        case '@':
+            c.liga_desliga()
+        case '>':
+            c.canal_mais()
+        case '<':
+            c.canal_menos()
+        case '+':
+            c.volume_mais()
+        case '-':
+            c.volume_menos()
