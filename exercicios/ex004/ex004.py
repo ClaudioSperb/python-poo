@@ -16,7 +16,7 @@ class Aluno(Pessoa):
         self.turma = turma
 
     def fazer_matricula(self):
-        pass
+        print(f'O aluno {self.nome} acabou de fazer a matricula')
 
 
 class Professor(Pessoa):
@@ -26,7 +26,8 @@ class Professor(Pessoa):
         self.nivel = nivel
 
     def dar_aula(self):
-        pass
+        print(f'O professor {self.nome} começou a dar aula')
+
 
 class Funcionario(Pessoa):
     def __init__(self, nome, idade, cargo, setor):
@@ -35,7 +36,19 @@ class Funcionario(Pessoa):
         self.setor = setor
 
     def bater_pontos(self):
-        pass
+        print(f'O funcionario {self.nome} bateu o ponto')
+
 
 a1 = Aluno('Claudio', 36, 'ADS', 'T01')
-inspect(a1, methods=True)
+a1.fazer_aniversário()
+a1.fazer_matricula()
+inspect(a1)
+
+
+p1 = Professor('Gustavo Guanabara', 45, 'T.I', 'Mestrado')
+p1.dar_aula()
+inspect(p1)
+
+f1 = Funcionario('Claudio', 36, 'Gerente', 'Comercial')
+f1.bater_pontos()
+inspect(f1)
