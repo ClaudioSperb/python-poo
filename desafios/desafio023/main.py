@@ -2,7 +2,7 @@ from poligono import *
 from rich import print, inspect
 
 def main():
-    p1 = Triangulo(10)
+    p1 = Quadrado(10)
 
     print(f'Area = {p1.area():.2f}')
     print(f'Perimetro = {p1.perimetro():.2f}')
