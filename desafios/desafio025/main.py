@@ -2,11 +2,11 @@ from frete import *
 from rich import print
 
 def main():
-    dist = 80
+    dist = 50
 
     entrega = Drone(dist)
 
-    print(f'Frete de {type(entrega).__name__} em {dist}Km = {entrega.calcular_frete():.2f}')
+    print(f'Frete de {type(entrega).__name__} em {dist}Km = {entrega.calcular_frete()}')
 
 
 if __name__ == '__main__':

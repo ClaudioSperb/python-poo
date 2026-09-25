@@ -23,21 +23,21 @@ class Caminhao(Transporte):
         super().__init__(distancia)
 
     def calcular_frete(self):
-        if self.distancia < 50:
+        if self.distancia <= 50:
             return '[ERRO] - Raio inferior a 50Km'
         else:
             frete = self.distancia * 1.20
             frete = float(frete)
-            return frete
+            return f'{frete:.2f}'
 
 class Drone(Transporte):
     def __init__(self, distancia):
         super().__init__(distancia)
 
     def calcular_frete(self):
-        if self.distancia >= 11:
-            return '[ERRO] - Raio de 10Km Ultrapassados!'
-        else:
+        if self.distancia <= 10:
             frete = self.distancia * 9.50
             frete = float(frete)
-            return frete
+            return f'{frete:.2f}'
+        else:
+            return '[ERRO] - Raio de 10Km Ultrapassados!'
