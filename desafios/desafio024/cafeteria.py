@@ -2,8 +2,6 @@ from abc import ABC, abstractmethod
 from rich import print
 
 class BebidaQuente(ABC):
-    def __init__(self):
-        pass
 
     def preparar(self):
         print('--- 🏁 Iniciando Preparo 🏁 ---')
@@ -18,7 +16,7 @@ class BebidaQuente(ABC):
     @abstractmethod
     def misturar(self):
         pass
-
+    @abstractmethod
     def servir(self):
         pass
 
