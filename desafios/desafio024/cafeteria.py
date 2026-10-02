@@ -10,12 +10,14 @@ class BebidaQuente(ABC):
         self.servir()
         print('--- ✅  Bebida Pronta ✅  ---')
 
+
     def ferver_agua(self):
         print(f'1. 🔥 Fervendo a água em 100º Celcius 🔥')
 
     @abstractmethod
     def misturar(self):
         pass
+
     @abstractmethod
     def servir(self):
         pass
