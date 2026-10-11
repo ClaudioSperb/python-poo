@@ -4,8 +4,9 @@ from rich import print, inspect
 
 def main():
     av1 = Avaliacao("Claudio", "Matemática")
-    #av1.nota = -345
-    inspect(av1, private=True)
+    av1.set_nota(9.8)
+    print(f'{av1.nome} tirou {av1.get_nota()} em {av1.disciplina}')
+    #inspect(av1, private=True) #private=True faz mostrar os atributos privados
 
 if __name__ == '__main__':
     main()
